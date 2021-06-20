@@ -1,6 +1,7 @@
+import {Title} from './styles'
 
 const Home: React.FC = () => {
-    return <h2>Home</h2>
+    return <Title>Home</Title>
 }
 
 export default Home;
