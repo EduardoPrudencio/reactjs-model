@@ -1,8 +1,11 @@
-import Home from './Pages/Home';
-import Details from './Pages/Details';
+import Routes from './Routes'
+import {BrowserRouter} from  'react-router-dom';
 
-function App() {
-  return <Home />
-}
+const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
+)
+
 
 export default App;
