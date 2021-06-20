@@ -1,6 +1,8 @@
+import { Title } from './styles';
+
 
 const Details: React.FC = () => {
-    return <h2>Details</h2>
+    return <Title>Conteúdo da página de detalhes</Title>
 }
 
 export default Details;

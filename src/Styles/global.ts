@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import reactBG from '../Assets/Images/react-logo.svg';
+import reactBG from '../Assets/Images/react-logo.png';
 
  export default createGlobalStyle`
     
@@ -12,11 +12,12 @@ import reactBG from '../Assets/Images/react-logo.svg';
     }
 
     body{
-        background: #F0F0F5 url(${reactBG}) no-repeat 50% top;
+        background: #F0F0F5 url(${reactBG}) no-repeat 50% 35%;
     }
 
     body, input, button {
         font: 16px Roboto, sans-serif;
+        color: #1f618d;
     }
 
     #root{
