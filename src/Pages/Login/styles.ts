@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-const mainColor = '#3498DB';
+const mainColor = '#154360';
+const secondaryColor = '#FF5733';
 
 export const Container = styled.div`
     margin: 0 auto;
-    background-color: #FFF;
+    background-color: rgba(255,255,255, 0.8);
     border-radius: 10px;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 320px;
     padding: 10px 10px;
 `;
 
@@ -57,12 +58,15 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 300px;
     height: 250px;
+    
     input {
         height: 20px;
         width: 80%;
         border: 0;
-        margin-top: -5px;;
+        margin-top: -5px;
+        background-color: rgba(255,255,255, 0);
         
         &::placeholder {
             color: #a8a8b3;
@@ -90,3 +94,18 @@ export const Form = styled.form`
         font-size: 12px;;
     }
 `;
+
+export const ButtonForgotPassWord = styled.button`
+        width: 100%;
+        height: 45px;
+        margin-top: 10px;
+        border: 0;
+        border-radius: 10px;
+        color: #FFF;
+        background-color: ${secondaryColor};
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: ${shade(0.2, secondaryColor)};
+        }
+`; 

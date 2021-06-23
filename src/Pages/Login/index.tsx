@@ -1,41 +1,65 @@
+import {useState, FormEvent} from 'react';
 import { Container,
     ContainerIcon,
     Form, 
     InputBox, 
     ContainerInput, 
-    ContainerIconInput } 
+    ContainerIconInput,
+    ButtonForgotPassWord 
+} 
     from './styles';
 import {SiReact} from  'react-icons/si';
 import {BiUser, BiLock} from  'react-icons/bi';
-import { Link } from 'react-router-dom';
 
 
 const Login: React.FC = () => {
+
+const [login, setLogin] = useState('');
+const [password, setPassword] = useState('');
+
+
+const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Login e senha ',login,' ', password)
+  };
+
     return ( <Container> 
         <ContainerIcon>
         <SiReact size={70}/>
         </ContainerIcon>
-        <Form>
+        <Form onSubmit={handleFormSubmit}>
 
         <ContainerInput>
             <InputBox>
                 <ContainerIconInput>
                     <BiUser size={30} />
                 </ContainerIconInput>
-                <input placeholder="Login" />
+
+                <input placeholder="Login" 
+                value={login}
+                onChange={e => setLogin(e.target.value)}
+                />
+
             </InputBox>
 
             <InputBox>
                 <ContainerIconInput>
                     <BiLock size={25} />
                 </ContainerIconInput>
-                <input type="password" placeholder="Password" />
+
+                <input type="password" placeholder="Password"
+                value={password}
+                onChange = {e => setPassword(e.target.value)} />
+
             </InputBox>
+
         </ContainerInput>
 
-        <Link to="">Esqueci a senha</Link>
-        <button type="submit">Login</button>
+        <button type="submit">Entrar</button>
     </Form>
+    <ButtonForgotPassWord>
+        Esqueci a senha
+    </ButtonForgotPassWord>
     </Container>)
 }
 

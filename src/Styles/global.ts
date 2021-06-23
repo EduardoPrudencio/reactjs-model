@@ -12,7 +12,8 @@ import reactBG from '../Assets/Images/react-logo.png';
     }
 
     body{
-        background: #F0F0F5 url(${reactBG}) no-repeat 50% 35%;
+        //background: #1F618D url(${reactBG}) no-repeat 50% 35%;
+        background: #1F618D  no-repeat 50% 35%;
     }
 
     body, input, button {
