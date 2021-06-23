@@ -42,7 +42,6 @@ export const InputBox = styled.div`
 
 export const ContainerInput = styled.div`
     margin-top: 10px;
-    margin-bottom: -40px;
 `;
 
 export const ContainerIconInput = styled.div`
@@ -73,6 +72,10 @@ export const Form = styled.form`
         }
     }
 
+    input[type="checkbox"]{
+        display: inline-block;
+    }
+
     button {
         width: 100%;
         height: 45px;
@@ -88,11 +91,6 @@ export const Form = styled.form`
         }
     }
 
-    a {
-        text-decoration: none;
-        color:  ${mainColor};
-        font-size: 12px;;
-    }
 `;
 
 export const ButtonForgotPassWord = styled.button`
