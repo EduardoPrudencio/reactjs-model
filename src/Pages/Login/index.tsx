@@ -1,4 +1,4 @@
-import {useState, FormEvent} from 'react';
+import {useState, useEffect} from 'react';
 import { Container,
     ContainerIcon,
     Form, 
@@ -14,14 +14,27 @@ import {BiUser, BiLock} from  'react-icons/bi';
 
 const Login: React.FC = () => {
 
-const [login, setLogin] = useState('');
-const [password, setPassword] = useState('');
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
 
 
-const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login e senha ',login,' ', password)
-  };
+    const handleFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        localStorage.setItem('@EstudoReactNative:login', login);
+        localStorage.setItem('@EstudoReactNative:password', password);
+        console.log('Login e senha ',login,' ', password)
+    };
+
+    useEffect (() => {
+        const loginStoage = localStorage.getItem('@EstudoReactNative:login');
+        const passwordStorage = localStorage.getItem('@EstudoReactNative:password');
+
+        if (loginStoage !== null && passwordStorage !== null) {
+            setLogin(loginStoage);
+            setPassword(passwordStorage);
+        }
+
+    },[])
 
     return ( <Container> 
         <ContainerIcon>
